@@ -1,0 +1,120 @@
+
+  @import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
+
+
+$banner-width: 100%;
+$banner-height: 10em;
+$primary-color: #332eaa;
+
+
+
+.banner {
+	width: 100%;
+	background: white;
+	height: $banner-height;
+	overflow: hidden;
+	display: flex;
+	justify-content: flex-start;
+	box-shadow: 0 5px 15px rgba(0, 0, 0, 0.35);
+	cursor: pointer;
+	border-radius: .3em;
+  background: $primary-color;
+ 
+
+	// &:hover {
+	// 	transform: scale(1.05);
+	// 	box-shadow: 0 5px 15px 10px rgba(0, 0, 0, 0.55);
+	// }
+}
+
+
+.shopping-image {
+	height: auto;
+	width: 100%;
+	// transform: translateX(-1 * ($banner-width / 2)) translateY(-1 * $banner-height);
+	// overflow: hidden;
+  background: $primary-color;
+  
+	
+	> img {
+		height: $banner-height;
+		width: 40%;
+		object-fit: cover;
+		border-radius: 0 0em 15em 2em/0 9em 10em 0;
+		box-shadow: 3px 5px 1px 3px #5bafeb;
+	}
+  .real-estate-text{
+    padding: 15px;
+    border-right: 3px solid #ffffff;
+    font-family: 'Bebas Neue', sans-serif;
+  }
+}
+
+// .text {
+// 	height: $banner-height;
+// 	width: 20em / 2;
+// 	display: flex;
+// 	justify-content: center;
+// 	text-align: center;
+//   background: $primary-color;
+//   @include breakpoint("md") {
+//     font-size: 14px !important;
+//   }
+
+	
+// 	> * {
+// 			font-size: 12px;
+// 			text-align: center;
+// 	}
+// }
+
+// a {
+// 	color: #fff;
+// }
+
+.description-list{
+  font-size: 1vw;
+}
+.description{
+  font-size: 1.5vw;
+  font-family: 'Bebas Neue', sans-serif;
+  letter-spacing: 10px;
+
+  @include breakpoint("lg"){
+    font-size: 20px;
+  }
+}
+.hidden{
+  @include breakpoint("lg"){
+    display: none;
+    font-size: 15px;
+  }
+}
+
+  // .checkNow{
+  //   padding: 10px 20px;
+  //   border-radius: 10px ;
+  //   border: 0;
+  //   font-weight: 500;
+  //   @include breakpoint("md") {
+  //     padding: 5px;
+  //     top: 0;
+  //   }
+
+  // }
+
+  .description-list{
+    @include breakpoint("lg"){
+      font-size: 12px;
+    }
+  }
+
+.checkNow:hover{
+  opacity: 0.9;
+}
+
+.stats{
+  @include breakpoint("lg"){
+    visibility: hidden;
+  }
+}

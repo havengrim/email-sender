@@ -1,0 +1,20 @@
+$font-weights: (
+    "thin": 100,
+    "light": 300,
+    "regular": 400,
+    "medium": 500,
+    "semibold": 600,
+    "bold": 700,
+    "extrabold": 800,
+    "black": 900,
+);
+
+@each $name, $weight in $font-weights {
+    .font-weight-#{$name} {
+        font-weight: $weight;
+    }
+}
+
+.credit-card-number{
+    font-family: 'Courier New', monospace;
+}

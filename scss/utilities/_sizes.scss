@@ -1,0 +1,23 @@
+$weights: (
+    "25": 25%,
+    "50": 50%,
+    "75": 75%,
+    "100": 100%,
+);
+$content-height: (
+    "25": 25%,
+    "50": 50%,
+    "75": 75%,
+    "100": 100%,
+);
+
+@each $name, $weight in $weights {
+    .w-#{$name} {
+        width: $weight;
+    }
+}
+@each $name, $height in $content-height {
+    .h-#{$name} {
+        height: $height; // Changed $content-height to $height
+    }
+}

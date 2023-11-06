@@ -1,0 +1,155 @@
+// Marketing Kit
+.flyer-wrapper {
+    transform: scale(0.6);
+    transform-origin: top;
+}
+
+$placeholder-bg: #d9d9d9;
+$placeholder-bg-shade: #969696;
+
+.flyer-theme {
+    .flyer-header {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 1rem;
+        background-color: var(--color-card);
+    
+        .flyer-address {
+            font-size: 10px;
+            font-weight: 600;
+        }
+    }
+
+    .flyer-open-house {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        padding: 1rem 2rem;
+        background-color: $placeholder-bg;
+        color: $placeholder-bg-shade;
+    }
+
+    .content-icon-xs {
+        background-color: $placeholder-bg;
+
+        span {
+            color: $placeholder-bg-shade;
+        }
+    }
+
+    .flyer-description, .flyer-footer {
+        background-color: $placeholder-bg;
+    }
+}
+
+
+// Theme Options
+:root {
+    --theme-1: #1a1a1a;
+    --theme-1-rgb: 26, 26, 26;
+    --theme-1-contrast: #ffffff;
+    --theme-1-shade: #f6d8ae;
+
+    --theme-2: #264653;
+    --theme-2-rgb: 38, 70, 83;
+    --theme-2-contrast: #ffffff;
+    --theme-2-shade: #2a9d8f;
+
+    --theme-3: #432371;
+    --theme-3-rgb: 67, 35, 113;
+    --theme-3-contrast: #ffffff;
+    --theme-3-shade: #faae7b;
+
+    --theme-4: #233d4d;
+    --theme-4-rgb: 35, 61, 77;
+    --theme-4-contrast: #ffffff;
+    --theme-4-shade: #fe7f2d;
+
+    --theme-5: #00296b;
+    --theme-5-rgb: 0, 41, 107;
+    --theme-5-contrast: #ffffff;
+    --theme-5-shade: #ffd500;
+
+    --theme-6: #083d77;
+    --theme-6-rgb: 8, 61, 119;
+    --theme-6-contrast: #ffffff;
+    --theme-6-shade: #ebebd3;
+
+    --theme-7: #201e1f;
+    --theme-7-rgb: 32, 30, 31;
+    --theme-7-contrast: #ffffff;
+    --theme-7-shade: #ff4000;
+
+    --theme-8: #ef476f;
+    --theme-8-rgb: 239, 71, 111;
+    --theme-8-contrast: #ffffff;
+    --theme-8-shade: #ffd166;
+
+    --theme-9: #6a041d;
+    --theme-9-rgb: 106, 4, 29;
+    --theme-9-contrast: #ffffff;
+    --theme-9-shade: #f5b841;
+
+    --theme-10: #0d1821;
+    --theme-10-rgb: 13, 24, 33;
+    --theme-10-contrast: #ffffff;
+    --theme-10-shade: #a2b3cc;
+}
+
+$flyer-theme-colors: (
+    "theme-1": var(--theme-1),
+    "theme-2": var(--theme-2),
+    "theme-3": var(--theme-3),
+    "theme-4": var(--theme-4),
+    "theme-5": var(--theme-5),
+    "theme-6": var(--theme-6),
+    "theme-7": var(--theme-7),
+    "theme-8": var(--theme-8),
+    "theme-9": var(--theme-9),
+    "theme-10": var(--theme-10),
+) !default;
+
+@each $theme, $value in $flyer-theme-colors {
+    .flyer-#{$theme} {
+        .flyer-header {
+            background-color: $value;
+            color: var(--#{$theme}-contrast);
+
+            .flyer-address {
+                color: var(--#{$theme}-shade);
+            }
+
+            .offered-at-text {
+                color: var(--#{$theme}-shade);
+            }
+        }
+
+        .flyer-open-house {
+            background-color: rgba(var(--#{$theme}-rgb), 0.3);
+            color: var(--#{$theme}-contrast);
+        }
+
+        .content-icon-xs {
+            background-color: rgba(var(--#{$theme}-rgb), 0.2);
+    
+            span {
+                color: var(--#{$theme});
+            }
+        }
+
+        .flyer-description {
+            background-color: rgba(var(--#{$theme}-rgb), 0.2);
+        }
+
+        .flyer-agent-name {
+            color: var(--#{$theme});
+        }
+
+        .flyer-footer {
+            background-color: $value;
+            color: var(--#{$theme}-contrast);
+        }
+    }
+}

@@ -1,0 +1,40 @@
+.profiles-wrapper {
+    position: relative;
+    display: grid;
+    grid-template-columns: 100%;
+    justify-content: center;
+    justify-items: center;
+
+    @include breakpoint("md") {
+        grid-template-columns: 100%;
+        text-align: center;
+        color: black;
+    }
+    
+    .property-search {
+        position: relative;
+        background-color: var(--color-card);
+        border-radius: 8px;
+        margin-top: -6rem;
+        width: 100%;
+        padding: 1rem;
+        
+    }
+}
+
+.text-responsive {
+    color: white;
+
+    @include breakpoint("md") {
+        color: black;
+    }
+}
+
+.icons-details{
+    
+    @include breakpoint("md") {
+        display:flex;
+        justify-content: center;
+        align-items: center;
+    }
+}
