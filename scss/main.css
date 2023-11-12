@@ -15776,7 +15776,7 @@ header.sticky .nav-wrapper .tab-bar .tab-bar-button span {
   grid-area: sidebar-wrapper;
   overflow-y: auto;
   min-width: 60px;
-  background-color: var(--color-card-tint);
+  background-color: #082756;
   box-shadow: rgba(0, 0, 0, 0.05) 0px 0px 0px 1px;
   display: grid;
   grid-template-columns: 1fr;
@@ -15792,7 +15792,8 @@ header.sticky .nav-wrapper .tab-bar .tab-bar-button span {
 .app .sidebar-wrapper .top-navigation {
   grid-area: top-navigation;
   padding: 0.65rem 0.8rem;
-  background-color: var(--color-card-tint);
+  background-color: #082756;
+  color: white;
   border-bottom: 1px solid rgba(var(--color-medium-rgb), 0.2);
   position: sticky;
   top: 0;

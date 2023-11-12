@@ -72,6 +72,7 @@ $default-transition: all 0.2s ease !default;;
                     .aside-link {
                         .aside-text {
                             display: block;
+                            
                         }
                     }
                 }
@@ -87,7 +88,7 @@ $default-transition: all 0.2s ease !default;;
         grid-area: sidebar-wrapper;
         overflow-y: auto;
         min-width: 60px;
-        background-color: var(--color-card-tint); 
+        background-color: #082756;
         box-shadow: $default-shadow;
         display: grid;
         grid-template-columns: 1fr;
@@ -104,7 +105,8 @@ $default-transition: all 0.2s ease !default;;
         .top-navigation { 
             grid-area: top-navigation;
             padding: 0.65rem 0.8rem;
-            background-color: var(--color-card-tint);
+            background-color: #082756;
+            color: white;
             border-bottom: $default-border; 
             position: sticky;
             top: 0; 

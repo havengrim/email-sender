@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+
+    <title>Dashboard</title>
+
+   
+        <link rel="shortcut icon" href="/img/black-logo.png" type="image/x-icon">
+        <link rel="shortcut icon" href="/img/black-logo.png" type="image/x-icon">
+
+    <!-- Styles -->
+    <link rel="stylesheet" href="./node_modules/bootstrap/scss/bootstrap.scss">
+    <link rel="stylesheet" href="./scss/main.css">
+
+    <!-- Icons -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@48,400,0,0" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Material+Icons|Material+Icons+Outlined|Material+Icons+Two+Tone|Material+Icons+Round|Material+Icons+Sharp">
+
+</head>
+<body>
+    <div class="app">
+        <div class="sidebar-wrapper">
+            <div class="top-navigation">
+                <a href="{% url 'acms:dashboard' %}" class="d-flex align-items-center gap-2">
+                        <img src="/img/Untitled_design.png" width="32" class="logo" alt="UI Design">
+                    <span class="brand-text font-size-16 font-weight-semibold text-white">Real estate</span>
+                </a>
+            </div>
+            <div class="main-navigation">
+                <ul class="aside-menu">
+                    <li class="aside-item">
+                        <a href="{% url 'acms:dashboard' %}" class="aside-link" {% is_active request '/acms/dashboard' %}>
+                            <span class="material-symbols-rounded aside-icon text-white">home</span>
+                            <span class="aside-text text-white">Dashboard</span>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+        <header class="header-wrapper">
+            <button type="button" class="button button-tonal-medium button-sm-fab" id="toggle-sidebar"><span class="material-symbols-rounded">menu_open</span></button>
+            <div class="d-flex align-items-center gap-3">
+                <ul class="header-menu">
+                    <li class="header-item dropdown">
+                    
+                        <ul class="dropdown-menu">
+                            <li class="dropdown-heading">New</li>
+                            <li class="dropdown-item">
+                                <a href="{% url 'acms:blog-add' %}">
+                                    <span class="material-symbols-rounded">rss_feed</span> 
+                                </a>
+                            </li>   
+                            
+                            <li class="dropdown-item">
+                                <a href="{% url 'acms:help-center-add' %}">
+                                    <span class="material-symbols-rounded">help_outline</span> Help Center
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+                <div class="dropdown">
+                  
+                    <button type="button" class="button button-primary button-sm button-sm-fab dropdown-toggler text-uppercase" aria-haspopup="true" aria-expanded="false" title="Account"></button>
+                  
+                    <ul class="dropdown-menu">
+                        <li class="dropdown-item">
+                            <a href="{% url 'index' %}" target="_blank" rel="noreferrer">
+                                <span class="material-symbols-rounded">open_in_new</span> 
+                              
+                            </a>
+                        </li>
+                        <li class="dropdown-heading">Account</li>
+                        <li class="dropdown-item">
+                            <a href="{% url 'accounts:logout' %}">
+                                <span class="material-symbols-rounded">logout</span> Logout
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </header>
+
+        <main class="main-wrapper">
+            <div class="row mt-4">
+                <div class="col-xl-12">
+                    <span class="section-title">Customer information</span>
+                    <div class="table-responsive mt-3">
+                        <table class="table table-bordered">
+                            <thead>
+                                <tr>
+                                    <th>Name</th>
+                                    <th>Email</th>
+                                    <th>Phone Number</th>
+                                    <th>Subject</th>
+                                    <th>Date Submitted</th>
+                                    <th>Message</th>
+                                    <th width="5%" class="text-center">Action</th>
+                                </tr>
+                            </thead>
+                           
+                                <tbody>
+                                    <tr>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td><span data-bs-toggle="modal"  data-bs-target="#messageModal" data-message="{{inquiries.message}}" class="cursor-pointer">Preview Message</span></td>
+                                        <td>
+                                            <a href="javascript:void(0);" data-bs-toggle="modal" class="delete-btn" data-url="{% url 'acms:inquiries-delete' pk=inquiries.pk %}" data-bs-target="#deleteModal">
+                                                <button type="button" class="button button-tonal-medium button-sm-fab dropdown-toggler" >
+                                                <span class="material-symbols-rounded">delete</span>
+                                                </button>
+                                            </a>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+        </main>
+    </div>
+
+ <script src="./node_modules/bootstrap/dist/js/bootstrap.bundle.js"></script>
+</body>
+</html> 
